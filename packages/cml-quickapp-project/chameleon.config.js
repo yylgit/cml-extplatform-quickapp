@@ -6,6 +6,7 @@ const apiPrefix = 'https://api.chameleon.com';
 const path = require('path');
 
 cml.config.merge({
+  devPort: 8081,
   templateLang: "cml",
   templateType: "html",
   builtinNpmName: 'cml-quickapp-ui-builtin',
@@ -25,6 +26,7 @@ cml.config.merge({
   },
   quickapp: {
     dev: {
+      moduleIdType: 'name',
       minimize: false,
       increase: true
     },

@@ -83,6 +83,15 @@ f() */
 
 // }, 2000);
 
+async function testasync() {
+  var a = await new Promise(function(resolve, reject)  {
+        setTimeout(()=>{
+          resolve(2)
+        },2000)
+      })
+
+}
+
 class Index  {
     data: {
       lAnimate: null,
@@ -118,6 +127,17 @@ class Index  {
 
     mounted() {
       console.log('================ mounted')
+      new Promise(function(resolve, reject)  {
+        setTimeout(()=>{
+          resolve(2)
+        },2000)
+      }).then(res=>{
+        console.log(res);
+      })
+
+      testasync.then(res=>{
+        console.log('testasync:'+res);
+      })
 
     }
 
